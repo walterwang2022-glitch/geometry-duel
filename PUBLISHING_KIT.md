@@ -175,4 +175,109 @@ Control a geometric fighter in a dark neon arena, battling increasingly tough en
 
 ---
 
+---
+
+## 五、全平台发布指南
+
+### 🔗 GitHub Pages（免费直链）
+
+**部署命令：**
+```bash
+# 1. 创建仓库并推送
+cd /home/ubuntu/wmy/geometry-duel-build
+gh repo create geometry-duel --public --source=. --remote=origin --push \
+  --description "几何决斗 Geometry Duel - 2D几何风格像素射击游戏 | Phaser 3 + React 19"
+
+# 2. 开启 Pages
+gh api repos/walterwang2022-glitch/geometry-duel/pages \
+  -X POST -F 'source[branch]=main' -F 'source[path]=/'
+
+# 3. 访问链接
+# https://walterwang2022-glitch.github.io/geometry-duel/
+```
+
+---
+
+### 🏠 Gitee Pages（国内访问更快）
+
+1. 注册 gitee.com，导入 GitHub 仓库
+2. 服务 → Gitee Pages → 启动
+3. 获得 `https://你的用户名.gitee.io/geometry-duel` 链接
+
+---
+
+### 🎮 IndieNova（国内独立游戏社区）
+
+- 网址: https://indienova.com
+- 入口: 注册 → 开发者中心 → 发布游戏
+- 支持格式: 网页游戏（嵌入 iframe 或外链）
+- 审核: 1-3 个工作日
+
+**提交材料：**
+| 项目 | 内容 |
+|---|---|
+| 游戏名称 | 几何决斗 Geometry Duel |
+| 类型 | 动作 / 射击 / 街机 |
+| 平台 | Web / HTML5 |
+| 封面图 | `preview.png` (建议 616×353) |
+| 截图 | 主菜单、战斗、大招、完美闪避、皮肤编辑器（PNG/JPEG，至少 5 张） |
+| 描述 | 见上方「长描述-中文版」 |
+| 操作说明 | WASD移动 Z射击 X大招 空格冲刺 V弹反 |
+| 外链 | GitHub Pages 链接 |
+
+---
+
+### 🕹️ 4399 在线游戏
+
+- 网址: https://www.4399.com
+- 入口: 首页底部「开发者」→ 注册开发者账号 → 上传游戏
+- 支持格式: HTML5（单文件或 ZIP）
+- 审核: 3-7 个工作日
+
+**4399 特殊要求：**
+- 游戏必须适配 4399 的 iframe 嵌入，不能有跨域问题
+- 推荐在游戏内加入「更多游戏」按钮（可选）
+- 封面图: 220×160
+- 游戏截图: 至少 4 张，带 4399 水印（平台自动生成）
+- 标题: ≤10 个字（如「几何决斗」）
+
+---
+
+### 📱 TapTap / 好游快爆（需打包 APK）
+
+这两个平台主要面向手游 App，网页游戏需要先包装成 APK。
+
+**快速打包方案（HBuilder / WebView 套壳）：**
+
+1. 下载 [HBuilder X](https://www.dcloud.io/hbuilderx.html)
+2. 新建 5+App 项目
+3. 将 `index.html` 和 `assets/` 放入项目
+4. 配置 manifest.json 指向你的 GitHub Pages 链接
+5. 云打包生成 APK
+
+**TapTap 提交：**
+- 开发者中心: https://developer.taptap.cn
+- 需要软著或企业资质（个人开发者较难通过）
+- 建议先上 IndieNova 和 4399，等有口碑再上 TapTap
+
+**好游快爆：**
+- 提交入口: https://www.3839.com （需注册开发者）
+- 个人开发者可提交，审核周期 3-5 天
+- 需要 APK 包 + 5 张以上截图 + 游戏介绍
+
+---
+
+## 六、发布顺序建议
+
+```
+第1步: GitHub Pages       ← 10分钟，立刻有链接可分享
+第2步: B站/抖音视频        ← 录视频发，带 GitHub Pages 链接导流
+第3步: IndieNova          ← 1-3天审核，独立游戏圈曝光
+第4步: 4399               ← 3-7天审核，大流量曝光
+第5步: 好游快爆 (APK)     ← 做手机版，扩大用户群
+第6步: TapTap (APK)       ← 有口碑后再冲
+```
+
+---
+
 *生成时间: 2026-07-19 | 项目: 几何决斗网页游戏 (百度秒哒)*
